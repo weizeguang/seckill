@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wzg.mapper.SecKillGoodsMapper">
+    <!--SecKillGoods getSecKillGoodsByGoodsId(String goodsId);-->
+    <select id="getSecKillGoodsByGoodsId" resultType="SecKillGoods">
+        SELECT
+            id,
+            goods_id,
+            secKill_price,
+            stock_num,
+            start_time,
+            end_time
+        FROM
+            seckill_goods
+        WHERE
+            goods_id = #{goodsId};
+    </select>
+</mapper>
